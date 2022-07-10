@@ -1,7 +1,6 @@
 module Parser
 
 open FParsec
-open System
 
 type EjsNode = 
 | Script of string
