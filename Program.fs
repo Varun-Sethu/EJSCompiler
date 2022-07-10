@@ -1,7 +1,7 @@
 ﻿module Program
 
 open FParsec
-open Compiler
+open Parser
 open System.IO
 
 let stripExtension (file: string) : string = 
@@ -14,8 +14,9 @@ let main argv =
     
     match result with
     | Success(v, _, _) ->
-        let compiledResult = (compile v)
-        File.WriteAllText ($"{stripExtension file}__compiled.js", compiledResult)
+        // let compiledResult = (compile v)
+        // File.WriteAllText ($"{stripExtension file}__compiled.js", compiledResult)
+        printf "%A" result
         0
     | Failure (msg, err, _) ->
         printf "%s" msg
