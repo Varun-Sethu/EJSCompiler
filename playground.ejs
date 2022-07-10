@@ -1,0 +1,12 @@
+<%
+  var fruits = ["Apple", "Pear", "Orange", "Lemon"]
+  var random = " ".repeat(198).split("").map(x => Math.random());
+%>
+These fruits are amazing:
+<% for(var i = 0; i < fruits.length; ++i) {%>
+  - <b><%=           fruits[i]%>s</b>
+<% } %>
+Let's see some random numbers:
+<% random.forEach((c, i) => { %> 
+  <%= c.toFixed(10) + ((i + 1) % 6 === 0 ? "\n": "") %>
+<%});%>
