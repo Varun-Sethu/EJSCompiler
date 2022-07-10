@@ -5,7 +5,8 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Compiler.fs" />
+    <Compile Include="compiler/Parser.fs" />
+    <Compile Include="compiler/Compiler.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

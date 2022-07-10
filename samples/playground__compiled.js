@@ -1,5 +1,5 @@
 const f = () => {
-let __output = '';
+	let __output = '';
 	
   var fruits = ["Apple", "Pear", "Orange", "Lemon"]
   var random = " ".repeat(198).split("").map(x => Math.random());

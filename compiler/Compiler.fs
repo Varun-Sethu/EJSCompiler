@@ -29,5 +29,5 @@ let compileNode (node: EjsNode) : string =
 
 let compile (nodes: list<EjsNode>) : string = 
     let newline = System.Environment.NewLine
-    let body = nodes |> List.fold  (fun soFar node -> $"{soFar}\n{compileNode node}") "let __output = '';"
+    let body = nodes |> List.fold  (fun soFar node -> $"{soFar}\n{compileNode node}") "\tlet __output = '';"
     $"const f = () => {{{newline}{body}{newline}\treturn __output;{newline}}}"
