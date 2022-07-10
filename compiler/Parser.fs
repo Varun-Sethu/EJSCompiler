@@ -38,7 +38,6 @@ let parseTags =
     ]
 
 // Parse regular HTML blocks
-let parseHtml = manyCharsTill anyChar (lookAhead parseTags) |>> Html
-
+let parseHtml = many1CharsTill anyChar ((followedBy parseTags) <|> (followedBy eof)) |>> Html
 // Our final combined parser :D
 let parser: Parser<list<EjsNode>, unit> = many (parseTags <|> parseHtml)

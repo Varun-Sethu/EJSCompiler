@@ -28,4 +28,6 @@ let compile (x: string) : string option =
     let parsedData = run parser x
     match parsedData with
     | Success (v, _, _) -> Some (compileNodes v)
-    | Failure (_, _, _) -> None
+    | Failure (msg, _, _) -> 
+        printf "%s" msg
+        None
