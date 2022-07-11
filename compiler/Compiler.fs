@@ -12,8 +12,8 @@ let compileEjsNode (node: EjsNode) : string =
     | Comment _ -> ""
     | Script x -> $"{x} {newline}"
     | Html x -> $"{output} += `{x}`; {newline}"
-    | OutputNoEscape x -> $"{output} += $`{{{x}}}`; {newline}"
-    | Output x -> $"{output} += $`{{escape({x})}}`; {newline}"
+    | OutputNoEscape x -> $"{output} += `${{{x}}}`; {newline}"
+    | Output x -> $"{output} += `${{escape({x})}}`; {newline}"
 
 let compileNodes (nodes: list<EjsNode>) : string = 
     let compiledBody = nodes |> List.fold (fun soFar node -> soFar + compileEjsNode node) ""
